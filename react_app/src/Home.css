@@ -1,0 +1,32 @@
+/* sample-component.css */
+
+.sample-component {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .sample-component__card {
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    text-align: center;
+  }
+  
+  .sample-component__button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+  }
+  
+  .home {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #333;
+  }
+  
