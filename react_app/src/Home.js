@@ -7,6 +7,7 @@ const Home = () => {
 
     useEffect(() => {
 
+        // Adding event for IOS app
         window.addEventListener('iosEvent', iosEventHandler);
 
         return () =>
@@ -23,31 +24,39 @@ const Home = () => {
     )
 
     const onClickHandler = (name) => {
-        // Sending Data to IOS
+        // Sending Data to IOS App
         window?.webkit?.messageHandlers?.IOS_BRIDGE?.postMessage({
-            message: "Hello! I'm React. "+name,
+            message: name,
         });
     }
-
     
 
     const names = ['Atif', 'Jane', 'Vicky', 'Alice', 'Raj'];
 
-    
 
     return (
             
-        <div>
-          <h2>Click on the name to send to the IOS app </h2>
-          <ul>
-            {names.map((name) => (
-              <li key={name} onClick={() => onClickHandler(name)}>
-                {name}
-              </li>
-            ))}
-          </ul>
-          <div className="home">{dataFromIOS}</div>
-        </div>
+        <div className="app-container">
+      <header className="header">
+        <h1>React iOS Communication</h1>
+      </header>
+      <main className="main-content">
+        <h2>Click on the name to send to the iOS app</h2>
+        <ul>
+          {names.map((name) => (
+            <li key={name} onClick={() => onClickHandler(name)}>
+              {name}
+            </li>
+          ))}
+        </ul>
+        {dataFromIOS && (
+          <div className="response">Message From IOS App : {dataFromIOS}</div>
+        )}
+      </main>
+      <footer className="footer">
+        <p>&copy; 2024 AtifTech</p>
+      </footer>
+    </div>
        
       );
 

@@ -23,10 +23,12 @@ struct WebViewScreen: View {
                 }
                 .navigationBarTitle(Text(webTitle), displayMode: .inline)
                 .alert(isPresented: $showAlert) {
-                    Alert(title: Text("Hello"), message: Text("Alert from React : \(self.message) "), dismissButton: .default(Text("OK"), action: {
+                    Alert(title: Text("Received Message From React :"), message: Text(self.message), dismissButton: .default(Text("OK"), action: {
                         self.showAlert = false
-                        print("sending messge : \(self.message)")
-                        self.viewModel.callbackValueFromNative.send("Hello from IOS")
+                        let randomInt = Int.random(in: 0..<3000)
+                        let sendMessage  = "\(self.message)_\(randomInt)"
+                        print(sendMessage)
+                        self.viewModel.callbackValueFromNative.send(sendMessage)
                     }))
                 }
                 .onReceive(self.viewModel.webTitle, perform: { receivedTitle in
@@ -36,7 +38,6 @@ struct WebViewScreen: View {
                     self.showAlert = result
                 })
                 .onReceive(self.viewModel.callbackValueFromReactJS, perform: {result in
-                //    self.showAlert = result
                     self.message = result
                     print(" message : \(self.message)")
                 })

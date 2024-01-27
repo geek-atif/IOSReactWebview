@@ -1,32 +1,54 @@
-/* sample-component.css */
+/* Home.css */
 
-.sample-component {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #f5f5f5;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.header {
+  background-color: #007bff;
+  color: #fff;
   
-  .sample-component__card {
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    text-align: center;
-  }
-  
-  .sample-component__button {
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-  }
-  
-  .home {
-    margin-top: 20px;
-    font-size: 18px;
-    color: #333;
-  }
-  
+  text-align: center;
+}
+
+.main-content {
+  flex-grow: 1;
+  padding: 2rem;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  margin: 0.5rem;
+  padding: 1rem;
+  background-color: #fff;
+  cursor: pointer;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.response {
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: #e0f7fa;
+  border: 1px solid #81d4fa;
+  border-radius: 4px;
+}
+
+.footer {
+  background-color: #007bff;
+  color: #fff;
+  padding: 1rem;
+  text-align: center;
+}
