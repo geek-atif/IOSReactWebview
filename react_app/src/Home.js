@@ -18,6 +18,7 @@ const Home = () => {
         (e) => {
             console.log("Received data from IOS : "+ e.detail.data);
             setDataFromIOS(e.detail.data);
+            
         },
         [setDataFromIOS]
     )
