@@ -16,14 +16,15 @@ const Home = () => {
 
     const iosEventHandler = useCallback(
         (e) => {
-            alert(e.detail.data);
-            console.log(e.detail.data);
+            console.log("Received data from IOS : "+ e.detail.data);
             setDataFromIOS(e.detail.data);
         },
         [setDataFromIOS]
     )
 
     const onClickHandler = (name) => {
+
+      console.log("Sending data to IOS : " +name);
         // Sending Data to IOS App
         window?.webkit?.messageHandlers?.IOS_BRIDGE?.postMessage({
             message: name,

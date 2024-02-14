@@ -40,6 +40,7 @@ struct MyWebView: UIViewRepresentable, WebViewHandlerDelegate {
         webview.navigationDelegate = context.coordinator
         webview.allowsBackForwardNavigationGestures = false
         webview.scrollView.isScrollEnabled = true
+        webview.isInspectable = true // For Debug 
         
         return webview
     }
